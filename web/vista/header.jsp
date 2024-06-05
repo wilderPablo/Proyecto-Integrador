@@ -22,7 +22,7 @@
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteCases.jsp">Cases</a></li>
                             <li><a href="<%=request.getContextPath()%>/SVPlacasMadre">Placas Madre</a></li>
                             <li><a href="<%=request.getContextPath()%>/SVMemoriaram">Memoria RAM</a></li>
-                            <li><a href="<%=request.getContextPath()%>/vista/Componente.Procesador.jsp">Procesador</a></li>
+                            <li><a href="<%=request.getContextPath()%>/SVProcesador">Procesador</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteTarjetasDeVideo.jsp">Tarjetas de video</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteCooler.jsp.jsp">Cooler</a></li>
                         </ul>

@@ -1,9 +1,4 @@
-<%-- 
-    Document   : ComponenteMouse
-    Created on : 5 jun. 2024, 11:26:27
-    Author     : user
---%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

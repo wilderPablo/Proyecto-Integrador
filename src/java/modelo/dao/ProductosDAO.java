@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import modelo.dto.*;
 import servicios.ConexionDB;
+
+import modelo.dto.TecladoDTO;
 
 /**
  *
@@ -162,6 +165,32 @@ public class ProductosDAO {
     } 
     return tecladoList;
 }
+     public List listarProsc() {
+        List<ProcesadorDTO> prosc = new ArrayList<>();
+        String SQL = "SELECT * FROM procesador";
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ProcesadorDTO ai = new ProcesadorDTO();
+                ai.setIdProducto(rs.getInt(1));
+                ai.setMarca(rs.getString(2));
+                ai.setGeneracion(rs.getString(3));
+                ai.setModeloCaja(rs.getString(4));
+                ai.setNumeroProcesador(rs.getString(5));
+                ai.setZocaloCompatible(rs.getString(6));
+                ai.setArquitectura(rs.getString(7));
+                ai.setLitografiaProcesador(rs.getInt(8));
+                ai.setNombre(rs.getString(9));
+                ai.setPrecio(rs.getDouble(10));
+                ai.setImagen(rs.getString(11));
+                prosc.add(ai);
+            }
+        } catch (Exception e) {
+        }
+        return prosc;
+    }
     
     
 }
