@@ -20,8 +20,8 @@
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteMouse.jsp">Mouse</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteAuriculares,jsp">Auriculares</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteCases.jsp">Cases</a></li>
-                            <li><a href="<%=request.getContextPath()%>/vista/ComponentePlacaMadre.jsp">Placas Madre</a></li>
-                            <li><a href="<%=request.getContextPath()%>/vista/ComponenteMemoriaRAM.jsp">Memoria RAM</a></li>
+                            <li><a href="<%=request.getContextPath()%>/SVPlacasMadre">Placas Madre</a></li>
+                            <li><a href="<%=request.getContextPath()%>/SVMemoriaram">Memoria RAM</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/Componente.Procesador.jsp">Procesador</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteTarjetasDeVideo.jsp">Tarjetas de video</a></li>
                             <li><a href="<%=request.getContextPath()%>/vista/ComponenteCooler.jsp.jsp">Cooler</a></li>

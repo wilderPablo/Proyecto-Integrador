@@ -18,6 +18,7 @@ import servicios.ConexionDB;
  * @author ander
  */
 public class ProductosDAO {
+
     Connection conexion;
     ConexionDB cdb = new ConexionDB();
     PreparedStatement ps;
@@ -48,5 +49,31 @@ public class ProductosDAO {
         } catch (SQLException e) {
         }
         return plm;
+    }
+
+    public List listarMRAM() {
+        List<MemoriaramDTO> mram = new ArrayList<>();
+        String SQL = "SELECT * FROM memoriaram";
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MemoriaramDTO ai = new MemoriaramDTO();
+                ai.setIdProducto(rs.getInt(1));
+                ai.setMarca(rs.getString(2));
+                ai.setNumeroModelo(rs.getString(3));
+                ai.setCapacidad(rs.getInt(4));
+                ai.setFrecuencia(rs.getInt(5));
+                ai.setTipoMemoria(rs.getString(6));
+                ai.setFactorForma(rs.getString(7));
+                ai.setNombre(rs.getString(8));
+                ai.setPrecio(rs.getDouble(9));
+                ai.setImagen(rs.getString(10));
+                mram.add(ai);
+            }
+        } catch (Exception e) {
+        }
+        return mram;
     }
 }
