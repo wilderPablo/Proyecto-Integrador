@@ -81,32 +81,31 @@ public class ProductosDAO {
     }
     
     public List<AuricularesDTO> listarAuriculares() {
-    List<AuricularesDTO> auricularesList = new ArrayList<>();
-    String SQL = "SELECT * FROM auriculares"; // Ajusta el nombre de la tabla según sea necesario
+    List<AuricularesDTO> aur = new ArrayList<>();
+    String SQL = "SELECT * FROM auriculares"; 
 
     try {
         conexion = cdb.obtenerConexion();
         ps = conexion.prepareStatement(SQL);
         rs = ps.executeQuery();
         while (rs.next()) {
-            AuricularesDTO acl = new AuricularesDTO();
-            acl.setIdProducto(rs.getInt(1));
-            acl.setMarca(rs.getString(2));
-            acl.setModelo(rs.getString(3));
-            acl.setNumeroParte(rs.getString(4));
-            acl.setColor(rs.getString(5));
-            acl.setIluminacion(rs.getString(6));
-            acl.setPatronPolarDelMicrofono(rs.getString(7));
-            acl.setCalidadDeAudio(rs.getFloat(8));
-            acl.setNombre(rs.getString(9));
-            acl.setPrecio(rs.getDouble(10));
-            acl.setImagen(rs.getString(11));
-            auricularesList.add(acl);
+            AuricularesDTO ai = new AuricularesDTO();
+            ai.setIdProducto(rs.getInt(1));
+            ai.setMarca(rs.getString(2));
+            ai.setModelo(rs.getString(3));
+            ai.setNumeroParte(rs.getString(4));
+            ai.setColor(rs.getString(5));
+            ai.setIluminacion(rs.getString(6));
+            ai.setPatronPolarDelMicrofono(rs.getString(7));
+            ai.setCalidadDeAudio(rs.getFloat(8));
+            ai.setNombre(rs.getString(9));
+            ai.setPrecio(rs.getDouble(10));
+            ai.setImagen(rs.getString(11));
+            aur.add(ai);
         }
-    } catch (SQLException e) {
-        e.printStackTrace(); // Añade manejo de excepciones adecuado
+    } catch (Exception e) {
     } 
-    return auricularesList;
+    return aur;
 }
     
     public List<MouseDTO> listarMouses() {

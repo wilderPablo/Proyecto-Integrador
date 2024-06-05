@@ -15,7 +15,7 @@ public class CerrarSesionServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate(); // Invalida la sesión actual.
-        response.sendRedirect(request.getContextPath() + "/vista/Ingresar.jsp"); // Redirige al usuario a la página de inicio de sesión.
+        response.sendRedirect(request.getContextPath() + "/vista/index.jsp"); // Redirige al usuario a la página de inicio de sesión.
     }
 
     @Override
@@ -32,7 +32,8 @@ public class CerrarSesionServlet extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Cierra la sesión del usuario";
+        return "Servlet para cerrar sesión";
     }
 }
+
 

@@ -24,17 +24,17 @@ import modelo.dto.TecladoDTO;
 @WebServlet(name = "AuricularesServlet", urlPatterns = {"/AuricularesServlet"})
 public class AuricularesServlet extends HttpServlet {
 ProductosDAO prodao = new ProductosDAO();
-    List<AuricularesDTO> auricularesList = new ArrayList<>();
+    List<AuricularesDTO> Auriculares = new ArrayList<>();
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
-        auricularesList = prodao.listarAuriculares();
+        Auriculares = prodao.listarAuriculares();
         if (accion != null) {
-            // Manejar acciones específicas si es necesario
+            
         } else {
-            request.setAttribute("Auriculares", auricularesList);
+            request.setAttribute("Auriculares", Auriculares);
             request.getRequestDispatcher("./vista/ComponenteAuriculares.jsp").forward(request, response);
         }
     }

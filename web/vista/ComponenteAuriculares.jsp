@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,13 +24,13 @@
     <body>
         <div class="container mt-5">
             <div class="row">
-                <c:forEach var="arl" items="${Auriculares}">
+                <c:forEach var="aur" items="${Auriculares}">
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="${pageContext.request.contextPath}/img/${arl.getImagen()}" class="card-img-top" alt="Auriculares">
+                            <img src="${pageContext.request.contextPath}/img/${aur.getImagen()}" class="card-img-top" alt="Auriculares">
                             <div class="card-body">
-                                <h5 class="card-title">${arl.getNombre()}</h5>
-                                <p class="card-text">S/.${arl.getPrecio()}</p>
+                                <h5 class="card-title">${aur.getNombre()}</h5>
+                                <p class="card-text">S/.${aur.getPrecio()}</p>
                                 <a href="#" class="btn btn-primary">AÑADIR</a>
                             </div>
                         </div>

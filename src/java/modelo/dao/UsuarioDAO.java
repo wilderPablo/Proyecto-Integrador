@@ -16,16 +16,17 @@ public class UsuarioDAO {
 
     public UsuarioDTO validarUsuario(String correo, String contrasena) {
         UsuarioDTO usuario = null;
-        String sql = "SELECT nombres, correo, contrasena FROM usuarios WHERE correo = ? AND contrasena = ?";
+        String sql = "SELECT id, nombres, apellidos, correo, contrasena FROM usuarios WHERE correo = ? AND contrasena = ?";
 
-        try (Connection conn = ConexionDB.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setString(1, correo);
             ps.setString(2, contrasena);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     usuario = new UsuarioDTO();
+                    usuario.setId(rs.getInt("id"));
                     usuario.setNombres(rs.getString("nombres"));
+                    usuario.setApellidos(rs.getString("apellidos"));
                     usuario.setCorreo(rs.getString("correo"));
                     usuario.setContrasena(rs.getString("contrasena"));
                 }
@@ -69,6 +70,7 @@ public class UsuarioDAO {
         }
     }
 }
+
 
 
 
