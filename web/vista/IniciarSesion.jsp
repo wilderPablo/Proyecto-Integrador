@@ -26,6 +26,7 @@
                 <input class="buttons" type="submit" value="Ingresar">
             </form>
             <p class="buttom"><a href="${pageContext.request.contextPath}/vista/Registrarse.jsp">¿No tienes cuenta? Registrate</a></p>
+            <p class="buttom"><a href="${pageContext.request.contextPath}/vista/Registrarse.jsp">Has olvidado tu contraseña?</a></p>
         </section>
     </div>
 </body>

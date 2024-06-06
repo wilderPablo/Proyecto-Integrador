@@ -8,13 +8,12 @@
     <link href="${pageContext.request.contextPath}/css/footerCSS.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/headerCSS.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/registrarseCSS.css" rel="stylesheet" type="text/css"/>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>COMUNICATEC&reg; - Registrarse</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/favicon_2.png" /> <!-- Icono del sitio web -->
 </head>
-<jsp:include page="header.jsp" />
 <body>
+    <jsp:include page="header.jsp" />
     <form action="${pageContext.request.contextPath}/RegistrarUsuarioServlet" method="post">
         <div class="containerRegistrar">
             <section class="form-register">
@@ -25,16 +24,16 @@
                 <c:if test="${not empty error}">
                     <p style="color: red">${error}</p>
                 </c:if>
-                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre" value="">
-                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" value="">
-                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" value="">
-                <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña" value="">
+                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre" value="${param.nombres}">
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" value="${param.apellidos}">
+                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" value="${param.correo}">
+                <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña">
                 <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
                 <input class="botons" type="submit" value="Registrar" name="registro">
                 <p><a class="buttom" href="${pageContext.request.contextPath}/vista/Ingresar.jsp">Ya tengo cuenta</a></p>
             </section>
         </div>
     </form>
+    <jsp:include page="footer.jsp" />
 </body>
-<jsp:include page="footer.jsp" />
 </html>
