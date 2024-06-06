@@ -190,6 +190,32 @@ public class ProductosDAO {
         }
         return prosc;
     }
+      public List listarMonitores() {
+        List<MonitorDTO> mnt = new ArrayList<>();
+        String SQL = "SELECT * FROM monitores";
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MonitorDTO ai = new  MonitorDTO();
+                ai.setIdProducto(rs.getInt(1)) ;
+                ai.setMarca(rs.getString(2));
+                ai.setModelo(rs.getString(3));
+                ai.setTamaño(rs.getInt(4));
+                ai.setTasaderefresco(rs.getInt(5));
+                ai.setTipodepanel(rs.getString(6));
+                ai.setGamadecolores(rs.getString(7));
+                ai.setProfundidaddecolor(rs.getString(8));
+                ai.setNombre(rs.getString(9));
+                ai.setPrecio(rs.getDouble(10));
+                ai.setImagen(rs.getString(11));
+                mnt.add(ai);
+            }
+        } catch (Exception e) {
+        }
+        return mnt;
+    }
     
     
 }

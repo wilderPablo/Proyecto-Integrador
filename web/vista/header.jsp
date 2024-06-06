@@ -28,7 +28,7 @@
                             <a href="#">Componentes <i class="fas fa-chevron-right"></i></a>
                             <ul class="submenu">
                                 <li><a href="<%=request.getContextPath()%>/vista/ComponenteAlmacenamiento.jsp">Almacenamiento</a></li>
-                                <li><a href="<%=request.getContextPath()%>/vista/ComponenteMonitores.jsp">Monitores</a></li>
+                                <li><a href="<%=request.getContextPath()%>/SVMonitores">Monitores</a></li>
                                 <li><a href="<%=request.getContextPath()%>/vista/ComponenteTeclado.jsp">Teclado</a></li>
                                 <li><a href="<%=request.getContextPath()%>/vista/ComponenteMouse.jsp">Mouse</a></li>
                                 <li><a href="<%=request.getContextPath()%>/AuricularesServlet">Auriculares</a></li>

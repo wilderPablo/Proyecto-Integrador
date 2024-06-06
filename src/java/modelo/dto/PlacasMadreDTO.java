@@ -1,11 +1,7 @@
 package modelo.dto;
 
-/**
- *
- * @author ander
- */
 public class PlacasMadreDTO {
-
+    
     private int idProducto;
     private String marca;
     private String chipset;

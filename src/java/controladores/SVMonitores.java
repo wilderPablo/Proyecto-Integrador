@@ -1,35 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.dao.ProductosDAO;
-import java.util.ArrayList;
-import java.util.List;
 
-@WebServlet(name = "SVPlacasMadre", urlPatterns = {"/SVPlacasMadre"})
-public class SVPlacasMadre extends HttpServlet {
-    
+@WebServlet(name = "SVMonitores", urlPatterns = {"/SVMonitores"})
+public class SVMonitores extends HttpServlet {
+
     ProductosDAO prodao = new ProductosDAO();
-    List<ProductosDAO> PlacaMadre =new ArrayList<>();
+    List<ProductosDAO> Monitores =new ArrayList<>();
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
-        PlacaMadre = prodao.listarPLM();
+        Monitores = prodao.listarMonitores();
         if(accion!=null){
             
         }else{
-            request.setAttribute("PlacaMadre", PlacaMadre);
-            request.getRequestDispatcher("./vista/ComponentePlacaMadre.jsp").forward(request, response);
+            request.setAttribute("Monitores", Monitores);
+            request.getRequestDispatcher("./vista/Monitores.jsp").forward(request, response);
         }
     }
 
@@ -49,6 +45,5 @@ public class SVPlacasMadre extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

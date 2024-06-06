@@ -2,9 +2,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Placas Madre</title>
+        <title>Monitores</title>
         <link href="<%=request.getContextPath()%>/css/headerCSS.css" rel="stylesheet" type="text/css"/>
         <link href="<%=request.getContextPath()%>/css/footerCSS.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -16,14 +16,14 @@
     <body>
         <div class="container mt-5">
             <div class="row">
-                <c:forEach var="plm" items="${PlacaMadre}">
+                <c:forEach var="mnt" items="${Monitores}">
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="${pageContext.request.contextPath}/img/${plm.getImagen()}" 
-                                 class="card-img-top" alt="PlacaMadre">
+                            <img src="${pageContext.request.contextPath}/img/${mnt.getImagen()}"
+                                 class="card-img-top" alt="Monitores">
                             <div class="card-body">
-                                <h5 class="card-title">${plm.getNombre()}</h5>
-                                <p class="card-text">S/.${plm.getPrecio()}</p>
+                                <h5 class="card-title">${mnt.getNombre()}</h5>
+                                <p class="card-text">S/.${mnt.getPrecio()}</p>
                                 <a href="#" class="btn btn-primary">AÑADIR</a>
                             </div>
                         </div>
@@ -32,9 +32,7 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script>
             const colors = ['#f8f9fa', '#000'];
             let currentColorIndex = 0;
@@ -49,4 +47,3 @@
     </body>
     <jsp:include page="footer.jsp" />
 </html>
-
