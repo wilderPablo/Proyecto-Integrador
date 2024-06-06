@@ -109,7 +109,7 @@ public class ProductosDAO {
 }
     
     public List<MouseDTO> listarMouses() {
-    List<MouseDTO> mouseList = new ArrayList<>();
+    List<MouseDTO> mou = new ArrayList<>();
     String SQL = "SELECT * FROM mouse"; // Ajusta el nombre de la tabla según sea necesario
 
     try {
@@ -129,16 +129,16 @@ public class ProductosDAO {
             mos.setSensorYTipo(rs.getString(9));
             mos.setPrecio(rs.getDouble(10));
             mos.setImagen(rs.getString(11));
-            mouseList.add(mos);
+            mou.add(mos);
         }
     } catch (SQLException e) {
         e.printStackTrace(); // Añade manejo de excepciones adecuado
     }
-    return mouseList;
+    return mou;
     }
     
     public List<TecladoDTO> listarTeclados() {
-    List<TecladoDTO> tecladoList = new ArrayList<>();
+    List<TecladoDTO> tcld = new ArrayList<>();
     String SQL = "SELECT * FROM teclado"; // Ajusta el nombre de la tabla según sea necesario
 
     try {
@@ -157,12 +157,12 @@ public class ProductosDAO {
             tcl.setNombre(rs.getString(8));
             tcl.setPrecio(rs.getDouble(9));
             tcl.setImagen(rs.getString(10));
-            tecladoList.add(tcl);
+            tcld.add(tcl);
         }
     } catch (SQLException e) {
         e.printStackTrace(); // Añade manejo de excepciones adecuado
     } 
-    return tecladoList;
+    return tcld;
 }
      public List listarProsc() {
         List<ProcesadorDTO> prosc = new ArrayList<>();

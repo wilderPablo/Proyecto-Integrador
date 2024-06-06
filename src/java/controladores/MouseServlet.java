@@ -24,17 +24,17 @@ import modelo.dto.TecladoDTO;
 @WebServlet(name = "MouseServlet", urlPatterns = {"/MouseServlet"})
 public class MouseServlet extends HttpServlet {
 ProductosDAO prodao = new ProductosDAO();
-    List<MouseDTO> mouseList = new ArrayList<>();
+    List<MouseDTO> Mouse = new ArrayList<>();
    
 protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
-        mouseList = prodao.listarMouses();
+        Mouse = prodao.listarMouses();
         if (accion != null) {
             // Manejar acciones específicas si es necesario
         } else {
-            request.setAttribute("Mouse", mouseList);
+            request.setAttribute("Mouse", Mouse);
             request.getRequestDispatcher("./vista/ComponenteMouse.jsp").forward(request, response);
         }
     }

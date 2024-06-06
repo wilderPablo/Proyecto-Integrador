@@ -24,13 +24,13 @@
     <body>
         <div class="container mt-5">
             <div class="row">
-                <c:forEach var="mos" items="${Mouse}">
+                <c:forEach var="mou" items="${Mouse}">
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="${pageContext.request.contextPath}/img/${mos.getImagen()}" class="card-img-top" alt="Mouse">
+                            <img src="${pageContext.request.contextPath}/img/${mou.getImagen()}" class="card-img-top" alt="Mouse">
                             <div class="card-body">
-                                <h5 class="card-title">${mos.getNombre()}</h5>
-                                <p class="card-text">S/.${mos.getPrecio()}</p>
+                                <h5 class="card-title">${mou.getNombre()}</h5>
+                                <p class="card-text">S/.${mou.getPrecio()}</p>
                                 <a href="#" class="btn btn-primary">AÑADIR</a>
                             </div>
                         </div>

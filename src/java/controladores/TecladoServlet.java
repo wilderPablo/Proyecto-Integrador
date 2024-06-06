@@ -22,17 +22,17 @@ import modelo.dto.TecladoDTO;
 @WebServlet(name = "TecladoServlet", urlPatterns = {"/TecladoServlet"})
 public class TecladoServlet extends HttpServlet {
 ProductosDAO prodao = new ProductosDAO();
-    List<TecladoDTO> tecladoList  = new ArrayList<>();
+    List<TecladoDTO> teclado= new ArrayList<>();
     
    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
-        tecladoList = prodao.listarTeclados();
+        teclado = prodao.listarTeclados();
         if (accion != null) {
             // Manejar acciones específicas si es necesario
         } else {
-            request.setAttribute("Teclado", tecladoList);
+            request.setAttribute("Teclado", teclado);
             request.getRequestDispatcher("./vista/ComponenteTeclado.jsp").forward(request, response);
         }
     }
