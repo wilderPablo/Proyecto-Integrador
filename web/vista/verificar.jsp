@@ -20,7 +20,7 @@
     <body class="verificacion-body">
         <div class="container">
             <span>Vamos a verificar tu correo electrónico</span>
-            <form action="SVVerificarCodigo" method="post">
+            <form action="${pageContext.request.contextPath}/SVVerificarCodigo" method="post">
                 <input type="text" name="authcode" required placeholder="Código de verificación">
                 <input type="submit" value="Verify">
             </form>
