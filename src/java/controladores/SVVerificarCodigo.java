@@ -1,7 +1,6 @@
 package controladores;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +14,24 @@ public class SVVerificarCodigo extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         UsuarioDTO usuarioDTO = (UsuarioDTO) session.getAttribute("authcode");
 
         String code = request.getParameter("authcode");
-        try (PrintWriter out = response.getWriter()) {
-            if (code.equals(usuarioDTO.getCode())) {
-                out.println("Verificación realizada");
-            } else {
-                out.println("Verificación incorrecta");
-            }
+        String message;
+        String messageColor;
+        
+        if (code.equals(usuarioDTO.getCode())) {
+            message = "Verificación realizada";
+            messageColor = "green";
+        } else {
+            message = "Verificación incorrecta";
+            messageColor = "red";
         }
+
+        request.setAttribute("message", message);
+        request.setAttribute("messageColor", messageColor);
+        request.getRequestDispatcher("/vista/verificar.jsp").forward(request, response);
     }
 
     @Override
@@ -46,4 +51,5 @@ public class SVVerificarCodigo extends HttpServlet {
         return "Short description";
     }
 }
+
 
