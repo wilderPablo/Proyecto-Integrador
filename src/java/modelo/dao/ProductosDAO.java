@@ -79,92 +79,93 @@ public class ProductosDAO {
         }
         return mram;
     }
-    
+
     public List<AuricularesDTO> listarAuriculares() {
-    List<AuricularesDTO> aur = new ArrayList<>();
-    String SQL = "SELECT * FROM auriculares"; 
+        List<AuricularesDTO> aur = new ArrayList<>();
+        String SQL = "SELECT * FROM auriculares";
 
-    try {
-        conexion = cdb.obtenerConexion();
-        ps = conexion.prepareStatement(SQL);
-        rs = ps.executeQuery();
-        while (rs.next()) {
-            AuricularesDTO ai = new AuricularesDTO();
-            ai.setIdProducto(rs.getInt(1));
-            ai.setMarca(rs.getString(2));
-            ai.setModelo(rs.getString(3));
-            ai.setNumeroParte(rs.getString(4));
-            ai.setColor(rs.getString(5));
-            ai.setIluminacion(rs.getString(6));
-            ai.setPatronPolarDelMicrofono(rs.getString(7));
-            ai.setCalidadDeAudio(rs.getFloat(8));
-            ai.setNombre(rs.getString(9));
-            ai.setPrecio(rs.getDouble(10));
-            ai.setImagen(rs.getString(11));
-            aur.add(ai);
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                AuricularesDTO ai = new AuricularesDTO();
+                ai.setIdProducto(rs.getInt(1));
+                ai.setMarca(rs.getString(2));
+                ai.setModelo(rs.getString(3));
+                ai.setNumeroParte(rs.getString(4));
+                ai.setColor(rs.getString(5));
+                ai.setIluminacion(rs.getString(6));
+                ai.setPatronPolarDelMicrofono(rs.getString(7));
+                ai.setCalidadDeAudio(rs.getFloat(8));
+                ai.setNombre(rs.getString(9));
+                ai.setPrecio(rs.getDouble(10));
+                ai.setImagen(rs.getString(11));
+                aur.add(ai);
+            }
+        } catch (Exception e) {
         }
-    } catch (Exception e) {
-    } 
-    return aur;
-}
-    
+        return aur;
+    }
+
     public List<MouseDTO> listarMouses() {
-    List<MouseDTO> mou = new ArrayList<>();
-    String SQL = "SELECT * FROM mouse"; // Ajusta el nombre de la tabla según sea necesario
+        List<MouseDTO> mou = new ArrayList<>();
+        String SQL = "SELECT * FROM mouse"; // Ajusta el nombre de la tabla según sea necesario
 
-    try {
-        conexion = cdb.obtenerConexion();
-        ps = conexion.prepareStatement(SQL);
-        rs = ps.executeQuery();
-        while (rs.next()) {
-            MouseDTO mos = new MouseDTO();
-            mos.setIdProducto(rs.getInt(1));
-            mos.setNombre(rs.getString(2));
-            mos.setMarca(rs.getString(3));
-            mos.setModelo(rs.getString(4));
-            mos.setNumeroParte(rs.getString(5));
-            mos.setIluminacion(rs.getString(6));
-            mos.setColor(rs.getString(9));
-            mos.setNumeroDeBotones(rs.getInt(8));
-            mos.setSensorYTipo(rs.getString(9));
-            mos.setPrecio(rs.getDouble(10));
-            mos.setImagen(rs.getString(11));
-            mou.add(mos);
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MouseDTO mos = new MouseDTO();
+                mos.setIdProducto(rs.getInt(1));
+                mos.setNombre(rs.getString(2));
+                mos.setMarca(rs.getString(3));
+                mos.setModelo(rs.getString(4));
+                mos.setNumeroParte(rs.getString(5));
+                mos.setIluminacion(rs.getString(6));
+                mos.setColor(rs.getString(9));
+                mos.setNumeroDeBotones(rs.getInt(8));
+                mos.setSensorYTipo(rs.getString(9));
+                mos.setPrecio(rs.getDouble(10));
+                mos.setImagen(rs.getString(11));
+                mou.add(mos);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Añade manejo de excepciones adecuado
         }
-    } catch (SQLException e) {
-        e.printStackTrace(); // Añade manejo de excepciones adecuado
+        return mou;
     }
-    return mou;
-    }
-    
+
     public List<TecladoDTO> listarTeclados() {
-    List<TecladoDTO> tcld = new ArrayList<>();
-    String SQL = "SELECT * FROM teclado"; // Ajusta el nombre de la tabla según sea necesario
+        List<TecladoDTO> tcld = new ArrayList<>();
+        String SQL = "SELECT * FROM teclado"; // Ajusta el nombre de la tabla según sea necesario
 
-    try {
-        conexion = cdb.obtenerConexion();
-        ps = conexion.prepareStatement(SQL);
-        rs = ps.executeQuery();
-        while (rs.next()) {
-            TecladoDTO tcl = new TecladoDTO();
-            tcl.setIdProducto(rs.getInt(1));
-            tcl.setMarca(rs.getString(2));
-            tcl.setModelo(rs.getString(3));
-            tcl.setTipoDeTeclado(rs.getString(4));
-            tcl.setFactorDeForma(rs.getString(5));
-            tcl.setSwitchType(rs.getString(6));
-            tcl.setCantidadDeTeclas(rs.getInt(7));
-            tcl.setNombre(rs.getString(8));
-            tcl.setPrecio(rs.getDouble(9));
-            tcl.setImagen(rs.getString(10));
-            tcld.add(tcl);
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                TecladoDTO tcl = new TecladoDTO();
+                tcl.setIdProducto(rs.getInt(1));
+                tcl.setMarca(rs.getString(2));
+                tcl.setModelo(rs.getString(3));
+                tcl.setTipoDeTeclado(rs.getString(4));
+                tcl.setFactorDeForma(rs.getString(5));
+                tcl.setSwitchType(rs.getString(6));
+                tcl.setCantidadDeTeclas(rs.getInt(7));
+                tcl.setNombre(rs.getString(8));
+                tcl.setPrecio(rs.getDouble(9));
+                tcl.setImagen(rs.getString(10));
+                tcld.add(tcl);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Añade manejo de excepciones adecuado
         }
-    } catch (SQLException e) {
-        e.printStackTrace(); // Añade manejo de excepciones adecuado
-    } 
-    return tcld;
-}
-     public List listarProsc() {
+        return tcld;
+    }
+
+    public List listarProsc() {
         List<ProcesadorDTO> prosc = new ArrayList<>();
         String SQL = "SELECT * FROM procesador";
         try {
@@ -190,7 +191,8 @@ public class ProductosDAO {
         }
         return prosc;
     }
-      public List listarMonitores() {
+
+    public List listarMonitores() {
         List<MonitorDTO> mnt = new ArrayList<>();
         String SQL = "SELECT * FROM monitores";
         try {
@@ -198,8 +200,8 @@ public class ProductosDAO {
             ps = conexion.prepareStatement(SQL);
             rs = ps.executeQuery();
             while (rs.next()) {
-                MonitorDTO ai = new  MonitorDTO();
-                ai.setIdProducto(rs.getInt(1)) ;
+                MonitorDTO ai = new MonitorDTO();
+                ai.setIdProducto(rs.getInt(1));
                 ai.setMarca(rs.getString(2));
                 ai.setModelo(rs.getString(3));
                 ai.setTamaño(rs.getInt(4));
@@ -216,6 +218,30 @@ public class ProductosDAO {
         }
         return mnt;
     }
-    
-    
+    public List listarAlmac(){
+       List<AlmacenamientoDTO> alm = new ArrayList<>();
+        String SQL = "SELECT * FROM almacenamiento";
+        try {
+            conexion = cdb.obtenerConexion();
+            ps = conexion.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                AlmacenamientoDTO ai = new AlmacenamientoDTO();
+                ai.setIdProducto(rs.getInt(1));
+                ai.setMarca(rs.getString(2));
+                ai.setModelo(rs.getString(3));
+                ai.setFactForm(rs.getString(4));
+                ai.setNumeroParte(rs.getString(5));
+                ai.setInterfaz(rs.getString(6));
+                ai.setCapacidad(rs.getString(7));
+                ai.setLectSecuencial(rs.getString(8));
+                ai.setNombre(rs.getString(9));
+                ai.setPrecio(rs.getDouble(10));
+                ai.setImagen(rs.getString(11));
+                alm.add(ai);
+            }
+        } catch (Exception e) {
+        }
+        return alm;
+    }
 }

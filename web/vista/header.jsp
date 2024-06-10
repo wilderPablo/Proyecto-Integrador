@@ -27,7 +27,7 @@
                         <li>
                             <a href="#">Componentes <i class="fas fa-chevron-right"></i></a>
                             <ul class="submenu">
-                                <li><a href="<%=request.getContextPath()%>/vista/ComponenteAlmacenamiento.jsp">Almacenamiento</a></li>
+                                <li><a href="<%=request.getContextPath()%>/SVAlmacenamiento">Almacenamiento</a></li>
                                 <li><a href="<%=request.getContextPath()%>/SVMonitores">Monitores</a></li>
                                 <li><a href="<%=request.getContextPath()%>/TecladoServlet">Teclado</a></li>
                                 <li><a href="<%=request.getContextPath()%>/MouseServlet">Mouse</a></li>
